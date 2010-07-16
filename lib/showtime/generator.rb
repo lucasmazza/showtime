@@ -2,7 +2,7 @@ module Showtime
   class Generator < Thor::Group
     include Thor::Actions
     
-    argument :name, :optional => true, :default => 'application'
+    argument :name, :optional => true, :default => '.'
     
     def self.source_root
       File.dirname(__FILE__)
