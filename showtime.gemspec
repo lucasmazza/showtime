@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
      "bin/showtime",
      "lib/showtime.rb",
      "lib/showtime/generator.rb",
-     "lib/showtime/runner.rb",
      "showtime.gemspec"
   ]
   s.homepage = %q{http://github.com/lucasmazza/showtime}

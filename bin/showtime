@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 # -*- mode: ruby -*-
-
 require 'showtime'
 
-#Showtime::Runner.run!(ARGV.dup)
 Showtime::Generator.start

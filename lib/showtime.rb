@@ -1,3 +1,3 @@
 require 'thor'
-require 'showtime/runner'
+require 'thor/group'
 require 'showtime/generator'
