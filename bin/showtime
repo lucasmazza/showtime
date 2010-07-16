@@ -3,4 +3,5 @@
 
 require 'showtime'
 
-Showtime::Runner.run!(ARGV.dup)
+#Showtime::Runner.run!(ARGV.dup)
+Showtime::Generator.start
