@@ -23,7 +23,7 @@ module Showtime
     end
 
     def create_spec_folder_and_helper
-      directory("templates/spec")
+      directory("templates/spec", "#{name}/spec")
     end
   end
 end
