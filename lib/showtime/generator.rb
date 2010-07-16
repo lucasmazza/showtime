@@ -3,7 +3,7 @@ module Showtime
     include Thor::Actions
     
     argument :name, :optional => true, :default => '.'
-    
+    class_options :heroku => :boolean
     def self.source_root
       File.dirname(__FILE__)
     end
@@ -25,5 +25,12 @@ module Showtime
     def create_spec_folder_and_helper
       directory("templates/spec", "#{name}/spec")
     end
+    
+    def create_gem_dependency_strategy
+      if options.heroku?
+        template("templates/.gems", "#{name}/.gems")
+      end
+    end
+    
   end
 end
