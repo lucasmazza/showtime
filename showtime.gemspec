@@ -18,12 +18,15 @@ Gem::Specification.new do |s|
     "README"
   ]
   s.files = [
-    "README",
+    ".gitignore",
+     "README",
      "Rakefile",
      "VERSION",
+     "bin/showtime",
      "lib/showtime.rb",
      "lib/showtime/generator.rb",
-     "lib/showtime/runner.rb"
+     "lib/showtime/runner.rb",
+     "showtime.gemspec"
   ]
   s.homepage = %q{http://github.com/lucasmazza/showtime}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -37,11 +40,14 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.3.0"])
+      s.add_runtime_dependency(%q<thor>, ["= 0.13.8"])
     else
       s.add_dependency(%q<rspec>, [">= 1.3.0"])
+      s.add_dependency(%q<thor>, ["= 0.13.8"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.3.0"])
+    s.add_dependency(%q<thor>, ["= 0.13.8"])
   end
 end
 
