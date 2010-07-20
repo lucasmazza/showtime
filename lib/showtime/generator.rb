@@ -4,18 +4,19 @@ module Showtime
     
     argument :name, :optional => true, :default => '.'
     class_options :heroku => :boolean
+    
     def self.source_root
-      File.dirname(__FILE__)
+      File.join(File.dirname(__FILE__), "templates")
     end
     
     def create_application_file
-      template("templates/application.rb", "#{name}/application.rb")
+      template("application.rb", "#{name}/application.rb")
     end
     def create_rakefile
-      template("templates/Rakefile", "#{name}/Rakefile")
+      template("Rakefile", "#{name}/Rakefile")
     end
     def create_config_ru
-      template("templates/config.ru", "#{name}/config.ru")
+      template("config.ru", "#{name}/config.ru")
     end
     
     def create_lib_folder
@@ -23,12 +24,12 @@ module Showtime
     end
 
     def create_spec_folder_and_helper
-      directory("templates/spec", "#{name}/spec")
+      directory("spec", "#{name}/spec")
     end
     
     def create_gem_dependency_strategy
       if options.heroku?
-        template("templates/.gems", "#{name}/.gems")
+        template(".gems", "#{name}/.gems")
       end
     end
     
