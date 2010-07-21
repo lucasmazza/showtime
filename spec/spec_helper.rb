@@ -12,6 +12,7 @@ Spec::Runner.configure do |config|
   FileUtils.rm_rf(SANDBOX)
   FileUtils.mkdir_p(SANDBOX)
   
+  # Stealed from http://github.com/wycats/thor/blob/master/spec/spec_helper.rb#L32
   def capture(stream)
     begin
       stream = stream.to_s
