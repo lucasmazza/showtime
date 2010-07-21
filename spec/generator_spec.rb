@@ -4,11 +4,7 @@ describe Showtime::Generator do
     
   context "with empty arguments" do
     before :each do 
-      ARGV.replace([])
-
-      inside sandbox do
-        capture(:stdout) { Showtime::Generator.start }
-      end
+      invoke!
     end
   
     it "creates the app on the working directory" do
@@ -21,12 +17,7 @@ describe Showtime::Generator do
   
   context "with a given project name" do
     before(:each) do
-      ARGV.replace(["my_awesome_app"])
-      @path = File.join(sandbox, "my_awesome_app")
-      
-      inside sandbox do
-        capture(:stdout) { Showtime::Generator.start }
-      end
+      @path =  invoke!("my_awesome_app")
     end
 
     it "creates the app on the given directory" do
@@ -39,12 +30,7 @@ describe Showtime::Generator do
   
   context "with the --heroku option" do
     before :each do 
-      ARGV.replace(["some_heroku_app","--heroku"])
-      @path = File.join(sandbox, "some_heroku_app")
-      
-      inside sandbox do
-        capture(:stdout) { Showtime::Generator.start }
-      end
+      @path = invoke!("some_heroku_app", "--heroku")
     end
   
     it "creates the .gems file for deployment" do
@@ -53,5 +39,20 @@ describe Showtime::Generator do
       end
     end
   end
+
+
+  
+  def invoke!(path = nil,*args)
+    args = ([path] + args).compact
+    path = path ? File.join(sandbox, path) : sandbox
+    ARGV.replace(args)
+    
+    inside sandbox do
+      capture(:stdout) { Showtime::Generator.start }
+    end
+    
+    path
+  end
+  
 end
 
