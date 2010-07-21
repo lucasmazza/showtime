@@ -11,7 +11,7 @@ Spec::Runner.configure do |config|
   Thor::Base.shell = Thor::Shell::Basic
   FileUtils.rm_rf(SANDBOX)
   FileUtils.mkdir_p(SANDBOX)
-
+  
   def capture(stream)
     begin
       stream = stream.to_s
@@ -24,5 +24,9 @@ Spec::Runner.configure do |config|
 
     result
   end
-
+  
+  def inside(path)
+    FileUtils.cd(path) { yield }
+  end
+  
 end
