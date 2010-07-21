@@ -36,5 +36,22 @@ describe Showtime::Generator do
       end
     end
   end
+  
+  context "with the --heroku option" do
+    before :each do 
+      ARGV.replace(["some_heroku_app","--heroku"])
+      @path = File.join(sandbox, "some_heroku_app")
+      
+      inside sandbox do
+        capture(:stdout) { Showtime::Generator.start }
+      end
+    end
+  
+    it "creates the .gems file for deployment" do
+      inside @path do
+        File.exists?(".gems").should be_true
+      end
+    end
+  end
 end
 
