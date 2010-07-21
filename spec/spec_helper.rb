@@ -25,6 +25,10 @@ Spec::Runner.configure do |config|
     result
   end
   
+  def sandbox
+    SANDBOX
+  end
+  
   def inside(path)
     FileUtils.cd(path) { yield }
   end
