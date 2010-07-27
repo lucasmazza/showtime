@@ -16,7 +16,7 @@ begin
     gem.bindir = "bin"
     gem.executables = %w(showtime)
     gem.test_files.include 'spec/**/*'
-    gem.add_dependency "thor", "0.13.8"
+    gem.add_dependency "thor", ">= 0.14.0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
