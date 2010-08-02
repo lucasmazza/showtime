@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{showtime}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Lucas Mazza"]
-  s.date = %q{2010-07-27}
+  s.date = %q{2010-08-01}
   s.default_executable = %q{showtime}
   s.description = %q{Application generator for simple Sinatra apps.}
   s.email = %q{luc4smazza@gmail.com}
@@ -33,8 +33,11 @@ Gem::Specification.new do |s|
      "lib/showtime/templates/Rakefile",
      "lib/showtime/templates/application.rb",
      "lib/showtime/templates/config.ru",
+     "lib/showtime/templates/public/javascripts/application.js",
+     "lib/showtime/templates/public/stylesheets/application.css",
      "lib/showtime/templates/spec/application_spec.rb",
      "lib/showtime/templates/spec/spec_helper.rb",
+     "lib/showtime/templates/views/index.erb",
      "showtime.gemspec",
      "spec/generator_spec.rb",
      "spec/helper_methods.rb",
@@ -46,9 +49,9 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Simple Sinatra generator}
   s.test_files = [
-    "spec/generator_spec.rb",
-     "spec/helper_methods.rb",
-     "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+     "spec/generator_spec.rb",
+     "spec/helper_methods.rb"
   ]
 
   if s.respond_to? :specification_version then
