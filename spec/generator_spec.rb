@@ -34,6 +34,26 @@ describe Showtime::Generator do
       end
     end
   end
+  
+  context "with the --views option" do
+    before(:each) do 
+      @path = invoke!("i_has_views", "--views")
+    end
+    
+    it "sets a public folder with javascripts and stylesheets subfolders" do
+      inside(@path) do
+        File.exists?("public/javascripts/application.js").should be_true
+        File.exists?("public/stylesheets/application.css").should be_true
+      end
+    end
+    
+    it "creates a simple erb view" do
+      inside(@path) do
+        File.exists?("views/index.erb").should be_true
+      end
+    end
+    
+  end
 
   def invoke!(path = nil,*args)
     args = ([path] + args).compact

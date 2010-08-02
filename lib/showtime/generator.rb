@@ -3,7 +3,7 @@ module Showtime
     include Thor::Actions
     
     argument :name, :optional => true, :default => '.'
-    class_options :heroku => :boolean
+    class_options :heroku => :boolean, :views => :boolean
     
     def self.source_root
       File.join(File.dirname(__FILE__), "templates")
@@ -30,6 +30,13 @@ module Showtime
     def create_gem_dependency_strategy
       if options.heroku?
         template(".gems", "#{name}/.gems")
+      end
+    end
+    
+    def create_views_and_public_folders
+      if options.views?
+        directory("views", "#{name}/views")
+        directory("public", "#{name}/public")
       end
     end
     
