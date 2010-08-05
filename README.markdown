@@ -8,7 +8,7 @@ Showtime's a sinatra apps generator based on [thor](http://github.com/wycats/tho
 
 ## Usage
 
-`showtime [options]`
+`showtime [appname] [options]`
 
 Available options
 
