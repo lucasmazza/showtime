@@ -8,7 +8,9 @@ Showtime's a sinatra apps generator based on [thor](http://github.com/wycats/tho
 
 ## Usage
 
-`showtime [appname] [--heroku]`
+`showtime [options]`
+
+Available options
 
     appname   folder name for the application. Otherwise uses the current folder.
     --heroku  builds a .gems file for heroku usage.
