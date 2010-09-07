@@ -2,3 +2,4 @@ pkg
 pkg/*
 output
 output/*
+.rvmrc
