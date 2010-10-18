@@ -3,7 +3,7 @@ require 'showtime'
 require 'fileutils'
 require 'stringio'
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
 
   def sandbox
     "./output/showtime"
