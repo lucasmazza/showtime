@@ -1,8 +1,8 @@
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
 
 desc "Run all specs"
-Spec::Rake::SpecTask.new do |t|
-  t.spec_opts = %w(--format specdoc --color)
+RSpec::Core::RakeTask.new do |task|
+  task.rspec_opts = ["-c"]
 end
 
 task :default => :spec

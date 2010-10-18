@@ -1,9 +1,9 @@
 require File.join(File.dirname(__FILE__), '..', 'application.rb')
 
-require 'spec'
+require 'rspec'
 require 'rack/test'
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   config.include Rack::Test::Methods
 end
 
