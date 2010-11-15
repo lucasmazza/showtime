@@ -22,15 +22,15 @@ describe Showtime::Generator do
     end
   end
   
-  context "with the --heroku option" do
+  context "with the --gemfile option" do
     before(:each) do 
-      @path = invoke!("some_heroku_app", "--heroku")
+      @path = invoke!("app", "--gemfile")
     end
   
-    it "creates the .gems file for deployment" do
+    it "creates a basic Gemfile" do
       inside(@path) do
         verify_expected_files!
-        File.exists?(".gems").should be_true
+        File.exists?("Gemfile").should be_true
       end
     end
   end

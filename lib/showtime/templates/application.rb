@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'sinatra'
-
 get '/' do
 <% if options.views? %>
   @text = "Hello world!"
