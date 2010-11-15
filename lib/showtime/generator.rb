@@ -1,10 +1,15 @@
 module Showtime
   class Generator < Thor::Group
     include Thor::Actions
-    
-    argument :name, :optional => true, :default => '.'
-    class_options :heroku => :boolean, :views => :boolean
-    
+
+    argument :name, :optional => true, :default => '.', :desc => "Your application folder"
+    class_option :heroku, :type => :boolean, :desc => "builds a .gems file for heroku usage."
+    class_option :views, :type => :boolean, :desc => "creates the public/javascripts and public/stylesheets folders, and a sample index.erb view."
+
+    def self.banner
+      "showtime [app_name] [options]"
+    end
+
     def self.source_root
       File.join(File.dirname(__FILE__), "templates")
     end
@@ -12,9 +17,11 @@ module Showtime
     def create_application_file
       template("application.rb", "#{name}/application.rb")
     end
+    
     def create_rakefile
       template("Rakefile", "#{name}/Rakefile")
     end
+    
     def create_config_ru
       template("config.ru", "#{name}/config.ru")
     end
