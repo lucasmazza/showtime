@@ -2,10 +2,9 @@
 
 Gem::Specification.new do |s|
   s.name        = "showtime"
-  s.version     = "0.2.0"
+  s.version     = "0.2.1"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Lucas Mazza"]
-  s.date        = %q{2010-08-09}
   s.email       = ["luc4smazza@gmail.com"]
   s.homepage    = "http://rubygems.org/gems/showtime"
   s.summary     = "Simple Sinatra generator"
