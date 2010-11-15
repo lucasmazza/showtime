@@ -13,5 +13,5 @@ Showtime's a sinatra apps generator based on [thor](http://github.com/wycats/tho
 Available options
 
     appname   folder name for the application. Otherwise uses the current folder.
-    --heroku  builds a .gems file for heroku usage.
+    --gemfile creates a Gemfile inside your application folder.
     --views   creates the public/javascripts and public/stylesheets folders, and a sample index.erb view.
